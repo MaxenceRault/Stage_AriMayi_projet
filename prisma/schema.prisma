@@ -1,0 +1,31 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String?
+  // On retire le champ "role"
+  // Si besoin, on pourra ajouter une référence à la table Candidate pour les utilisateurs candidats
+  candidate Candidate?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Candidate {
+  id             Int     @id @default(autoincrement())
+  userId         Int     @unique
+  cvUrl          String? // URL du CV uploadé
+  coverLetter    String? // Lettre de motivation
+  additionalInfo String? // Autres informations (profil, expériences, etc.)
+  
+  user           User    @relation(fields: [userId], references: [id])
+}

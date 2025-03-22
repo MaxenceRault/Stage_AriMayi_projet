@@ -1,0 +1,82 @@
+{
+  "home": {
+    "welcome": "Welcome to the recruitment platform",
+    "candidateButton": "Candidate",
+    "recruiterButton": "Recruiter",
+    "locale": "en"
+  },
+
+  "candidateForm": {
+    "title": "Candidate Registration",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign Up",
+    "nameRequired": "Please enter your name",
+    "emailRequired": "Please enter your email",
+    "emailInvalid": "Invalid email",
+    "passwordRequired": "Please enter your password",
+    "error": "Error during registration",
+    "success": "Registration successful!"
+  },
+
+  "candidateList": {
+    "title": "Candidate List",
+    "name": "Name",
+    "email": "Email",
+    "fetchError": "Error fetching candidates"
+  },
+
+  "candidateDetail": {
+    "title": "Candidate Details",
+    "name": "Name",
+    "email": "Email",
+    "fetchError": "Error fetching candidate",
+    "loading": "Loading...",
+    "back": "Back"
+  },
+
+  "candidateRegister": {
+    "title": "Candidate Registration",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign Up",
+    "nameRequired": "Please enter your name",
+    "emailRequired": "Please enter your email",
+    "emailInvalid": "Invalid email",
+    "passwordRequired": "Please enter your password",
+    "error": "Error during registration",
+    "success": "Registration successful!",
+    "locale": "en",
+    "Redirect": "Already registered? Log in"
+  },
+
+  "candidateLogin": {
+    "title": "Candidate Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Log In",
+    "emailRequired": "Please enter your email",
+    "emailInvalid": "Invalid email",
+    "passwordRequired": "Please enter your password",
+    "error": "Error during login",
+    "success": "Login successful!",
+    "locale": "en"
+  },
+
+  "candidateDashboard": {
+    "title": "Candidate Space",
+    "additionalInfo": "Additional Information",
+    "infoPlaceholder": "Describe your profile, your skills, etc.",
+    "coverLetter": "Cover Letter",
+    "coverLetterPlaceholder": "Your cover letter...",
+    "cv": "Your CV",
+    "uploadCV": "Upload CV",
+    "uploadSuccess": "CV uploaded successfully",
+    "uploadError": "Error uploading CV",
+    "updateProfile": "Update my profile",
+    "updateError": "Error updating",
+    "updateSuccess": "Profile updated successfully"
+  }
+}
