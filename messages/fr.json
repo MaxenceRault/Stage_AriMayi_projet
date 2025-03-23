@@ -17,12 +17,18 @@
   },
 
   "candidateDetail": {
-    "title": "Détails du Candidat",
+    "title": "Profil de {name}",
+    "backToList": "Retour à la liste",
+    "personalInfo": "Informations personnelles",
     "name": "Nom",
     "email": "Email",
-    "fetchError": "Erreur lors de la récupération du candidat",
-    "loading": "Chargement...",
-    "back": "Retour"
+    "coverLetter": "Lettre de motivation",
+    "additionalInfo": "Informations supplémentaires",
+    "notProvided": "Non renseigné",
+    "noCV": "Aucun CV disponible",
+    "downloadCV": "Télécharger le CV",
+    "fetchError": "Erreur lors du chargement du candidat.",
+    "notFound": "Candidat introuvable."
   },
   "candidateRegister": {
     "title": "Inscription Candidat",

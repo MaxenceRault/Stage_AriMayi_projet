@@ -1,14 +1,16 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import { Card, Typography, Spin,Button, message } from 'antd';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
+import { Card, Typography, Spin, Button, message } from 'antd';
+import { useTranslations } from 'next-intl';
 
 const { Title, Paragraph } = Typography;
 
 export default function CandidateDetailPage() {
   const params = useParams();
   const router = useRouter();
+  const t = useTranslations('candidateDetail');
+
   const id = params?.id as string;
 
   const [candidate, setCandidate] = useState<{
@@ -27,43 +29,48 @@ export default function CandidateDetailPage() {
         const res = await fetch(`/api/candidates/${id}`);
         const data = await res.json();
         if (!res.ok) {
-          message.error(data.error || 'Erreur serveur');
+          message.error(data.error || t('fetchError'));
         } else {
           setCandidate(data.candidate);
         }
       } catch (err) {
-        message.error('Erreur de chargement');
+        message.error(t('fetchError'));
       } finally {
         setLoading(false);
       }
     };
 
-    fetchCandidate(); // ✅ ici !
-  }, [id]);
+    fetchCandidate();
+  }, [id, t]);
 
   if (loading) return <Spin />;
-  if (!candidate) return <p>Candidat introuvable.</p>;
+  if (!candidate) return <p>{t('notFound')}</p>;
 
   const isPDF = candidate.cvUrl?.endsWith('.pdf');
 
   return (
     <div style={{ padding: 24 }}>
-      <Button type="default" onClick={() => params && router.push(`/${params.locale}/recruteur/candidats`)} style={{ marginBottom: 16 }}>
-        ← Retour à la liste
+      <Button
+        type="default"
+        onClick={() => params && router.push(`/${params.locale}/recruteur/candidats`)}
+        style={{ marginBottom: 16 }}
+      >
+        ← {t('backToList')}
       </Button>
-      <Title level={2}>Profil de {candidate.name}</Title>
 
-      <Card title="Informations personnelles" style={{ marginBottom: 24 }}>
-        <Paragraph><strong>Nom :</strong> {candidate.name}</Paragraph>
-        <Paragraph><strong>Email :</strong> {candidate.email}</Paragraph>
+      <Title level={2}>{t('title', { name: candidate.name })}</Title>
+
+      <Card title={t('personalInfo')} style={{ marginBottom: 24 }}>
+        <Paragraph><strong>{t('name')} :</strong> {candidate.name}</Paragraph>
+        <Paragraph><strong>{t('email')} :</strong> {candidate.email}</Paragraph>
       </Card>
 
-      <Card title="Lettre de motivation" style={{ marginBottom: 24 }}>
-        <Paragraph>{candidate.coverLetter || 'Non renseignée'}</Paragraph>
+      <Card title={t('coverLetter')} style={{ marginBottom: 24 }}>
+        <Paragraph>{candidate.coverLetter || t('notProvided')}</Paragraph>
       </Card>
 
-      <Card title="Infos supplémentaires" style={{ marginBottom: 24 }}>
-        <Paragraph>{candidate.additionalInfo || 'Non renseignées'}</Paragraph>
+      <Card title={t('additionalInfo')} style={{ marginBottom: 24 }}>
+        <Paragraph>{candidate.additionalInfo || t('notProvided')}</Paragraph>
       </Card>
 
       <Card title="CV">
@@ -77,14 +84,13 @@ export default function CandidateDetailPage() {
             />
           ) : (
             <a href={candidate.cvUrl} target="_blank" rel="noopener noreferrer">
-              Télécharger le CV
+              {t('downloadCV')}
             </a>
           )
         ) : (
-          <Paragraph>Aucun CV disponible.</Paragraph>
+          <Paragraph>{t('noCV')}</Paragraph>
         )}
       </Card>
     </div>
   );
 }
-// Compare this snippet from app/%5Blocale%5D/candidat/dashboard/page.tsx:

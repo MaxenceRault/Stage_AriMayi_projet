@@ -30,12 +30,18 @@
   },
 
   "candidateDetail": {
-    "title": "Candidate Details",
+    "title": "Profile of {name}",
+    "backToList": "Back to list",
+    "personalInfo": "Personal Information",
     "name": "Name",
     "email": "Email",
-    "fetchError": "Error fetching candidate",
-    "loading": "Loading...",
-    "back": "Back"
+    "coverLetter": "Cover Letter",
+    "additionalInfo": "Additional Information",
+    "notProvided": "Not provided",
+    "noCV": "No CV available",
+    "downloadCV": "Download CV",
+    "fetchError": "Error loading candidate.",
+    "notFound": "Candidate not found."
   },
 
   "candidateRegister": {
