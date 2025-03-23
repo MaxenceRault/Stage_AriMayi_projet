@@ -13,8 +13,6 @@ model User {
   email     String   @unique
   password  String
   name      String?
-  // On retire le champ "role"
-  // Si besoin, on pourra ajouter une référence à la table Candidate pour les utilisateurs candidats
   candidate Candidate?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

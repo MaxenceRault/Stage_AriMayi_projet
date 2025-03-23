@@ -24,11 +24,11 @@ export async function POST(request) {
       return NextResponse.json({ error: 'Identifiants invalides' }, { status: 401 });
     }
 
-    // Exclure le mot de passe dans la réponse
+    
     const { password: _, ...userWithoutPassword } = user;
 
     // Génération du token JWT
-    // Assurez-vous que process.env.JWT_SECRET est défini dans votre environnement (.env)
+    
     const token = jwt.sign(
       { userId: user.id, email: user.email },
       process.env.JWT_SECRET,

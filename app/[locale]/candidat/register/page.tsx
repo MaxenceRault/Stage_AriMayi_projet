@@ -1,4 +1,3 @@
-// app/[locale]/candidat/register/page.tsx
 'use client';
 import { Form, Input, Button, message } from 'antd';
 import Link from 'next/link';

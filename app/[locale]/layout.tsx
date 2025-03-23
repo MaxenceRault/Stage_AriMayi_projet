@@ -1,8 +1,7 @@
-// app/[locale]/layout.tsx
 import { NextIntlClientProvider } from 'next-intl';
 import type { Metadata } from 'next';
 import React from 'react';
-import Providers from './providers'; // 🆕 ton Provider Redux
+import Providers from './providers'; 
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   return {

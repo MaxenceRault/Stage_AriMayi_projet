@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 export async function GET(request) {
   try {
-    // 🔐 Récupérer le token depuis le header Authorization
+    
     const authHeader = request.headers.get('authorization');
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       return NextResponse.json({ error: 'Non autorisé' }, { status: 401 });

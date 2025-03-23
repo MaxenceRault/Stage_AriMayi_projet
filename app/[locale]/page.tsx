@@ -1,4 +1,3 @@
-// app/[locale]/page.tsx
 'use client';
 import { Button, Space } from 'antd';
 import { useRouter } from 'next/navigation';
