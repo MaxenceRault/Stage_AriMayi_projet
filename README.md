@@ -1,5 +1,8 @@
 # Maxence Rault Stage AriMayi Développement NextJS
 
+
+---
+
 # 💼 Plateforme de Recrutement – Frontend
 
 Bienvenue sur ce projet de plateforme web et mobile dédiée au recrutement.  
@@ -42,8 +45,8 @@ Développée en **Next.js 14** avec l'**App Router**, **TypeScript**, **Ant Desi
 
 ### 1. Cloner le dépôt
 ```bash
-git clone https://github.com/<ton-user>/projet-frontend-stage-arimayi.git
-cd projet-frontend-stage-arimayi
+git clone https://github.com/MaxenceRault/Stage_AriMayi_projet.git
+cd Stage_AriMayi_projet
 ``` 
 
 ### 2. Installer les dépendances 
@@ -100,3 +103,6 @@ Utilisé pour sécuriser les appels (Authorization: Bearer ...)
 ![Routes](./docs/routes.png)
 
 
+--- 
+
+### Si vous avez des questions ou des problèmes de lancement contactez moi sur : raultmaxence05@gmail.com
