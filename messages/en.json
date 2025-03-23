@@ -24,7 +24,9 @@
     "title": "Candidate List",
     "name": "Name",
     "email": "Email",
-    "fetchError": "Error fetching candidates"
+    "actions": "Actions",
+    "view": "View profile",
+    "fetchError": "Error loading candidates."
   },
 
   "candidateDetail": {

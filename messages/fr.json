@@ -8,10 +8,12 @@
 
   
   "candidateList": {
-    "title": "Liste des Candidats",
+    "title": "Liste des candidats",
     "name": "Nom",
     "email": "Email",
-    "fetchError": "Erreur lors de la récupération des candidats"
+    "actions": "Actions",
+    "view": "Voir le profil",
+    "fetchError": "Erreur lors du chargement des candidats."
   },
 
   "candidateDetail": {

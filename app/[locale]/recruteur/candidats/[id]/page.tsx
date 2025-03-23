@@ -1,12 +1,14 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { Card, Typography, Spin, message } from 'antd';
+import { Card, Typography, Spin,Button, message } from 'antd';
+import { useRouter } from 'next/navigation';
 
 const { Title, Paragraph } = Typography;
 
 export default function CandidateDetailPage() {
   const params = useParams();
+  const router = useRouter();
   const id = params?.id as string;
 
   const [candidate, setCandidate] = useState<{
@@ -46,6 +48,9 @@ export default function CandidateDetailPage() {
 
   return (
     <div style={{ padding: 24 }}>
+      <Button type="default" onClick={() => params && router.push(`/${params.locale}/recruteur/candidats`)} style={{ marginBottom: 16 }}>
+        ← Retour à la liste
+      </Button>
       <Title level={2}>Profil de {candidate.name}</Title>
 
       <Card title="Informations personnelles" style={{ marginBottom: 24 }}>

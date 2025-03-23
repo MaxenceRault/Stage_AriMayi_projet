@@ -3,6 +3,7 @@ import { Table, Button, message } from 'antd';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 interface Candidate {
   id: number;
@@ -15,6 +16,7 @@ export default function CandidateListPage() {
   const [loading, setLoading] = useState(false);
   const t = useTranslations('candidateList');
   const router = useRouter();
+  const params = useParams();
 
   const fetchCandidates = async () => {
     setLoading(true);
@@ -52,7 +54,7 @@ export default function CandidateListPage() {
       title: t('actions'),
       key: 'actions',
       render: (_: any, record: Candidate) => (
-        <Button type="link" onClick={() => router.push(`/recruteur/candidats/${record.id}`)}>
+        <Button type="link" onClick={() => params && router.push(`/${params.locale}/recruteur/candidats/${record.id}`)}>
           {t('view')}
         </Button>
       ),

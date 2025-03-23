@@ -2,6 +2,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import type { Metadata } from 'next';
 import React from 'react';
+import Providers from './providers'; // 🆕 ton Provider Redux
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   return {
@@ -17,15 +18,16 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  // Charge les messages de traduction pour la locale donnée (exemple: messages/fr.json)
   const messages = (await import(`../../messages/${params.locale}.json`)).default;
 
   return (
     <html lang={params.locale}>
       <body>
-        <NextIntlClientProvider locale={params.locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <Providers>
+          <NextIntlClientProvider locale={params.locale} messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </Providers>
       </body>
     </html>
   );

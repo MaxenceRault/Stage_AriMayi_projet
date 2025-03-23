@@ -23,7 +23,7 @@ export default function HomePage() {
         <Button type="primary" onClick={() => router.push(`/${t('locale')}/candidat/register`)}>
           {t('candidateButton')}
         </Button>
-        <Button onClick={() => router.push(`/${t('locale')}/recuteur/candidats`)}>
+        <Button onClick={() => router.push(`/${t('locale')}/recruteur/candidats`)}>
           {t('recruiterButton')}
         </Button>
       </Space>
